@@ -1,0 +1,15 @@
+.header {
+    position: fixed;
+    /* Giữ cố định */
+    top: 0;
+    /* Đặt ở đầu trang */
+    left: 0;
+    width: 100%;
+    /* Chiều rộng full */
+    background-color: #fff;
+    /* Nền trắng */
+    z-index: 1000;
+    /* Đảm bảo header luôn trên cùng */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Thêm bóng để phân biệt */
+}
