@@ -1,7 +1,7 @@
 import React from "react";
 import { useRoutes } from "react-router-dom";
 
-import {PATH} from './path'
+import { PATH } from './path'
 import AuthLayout from "../layouts/AuthLayout/AuthLayout";
 import MainLayout from "../layouts/MainLayout/MainLayout";
 import LoginPage from "../modules/auth/Login/LoginPage";
@@ -13,15 +13,15 @@ export default function useRouteElements() {
     // auth
     {
       path: PATH.AUTH,
-      element: <AuthLayout/>,
+      element: <AuthLayout />,
       children: [
         {
           path: PATH.LOGIN,
-          element: <LoginPage/>
+          element: <LoginPage />
         },
         {
           path: PATH.REGISTER,
-          element: <RegisterPage/>
+          element: <RegisterPage />
         },
       ],
     },
