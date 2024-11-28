@@ -1,0 +1,87 @@
+/* Header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar-logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+.navbar-links li:hover {
+    text-decoration: underline;
+}
+
+/* hình banner */
+.banner-carousel {
+    margin-top: 20px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    width: 100%;
+    max-height: 400px;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Lịch Chiếu */
+.lich-chieu {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.movie-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.movie-item {
+    text-align: center;
+    width: 200px;
+}
+
+.movie-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.movie-item p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}

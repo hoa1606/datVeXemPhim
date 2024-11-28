@@ -4,4 +4,5 @@ export const PATH = {
     AUTH: '/auth',
     REGISTER: '/auth/register',
     MOVIE_DETAILS: '/movie-details',
+    ADMIN: '/admin',
 };
