@@ -11,7 +11,7 @@ export default function HomePage() {
         <Header />
         <Banner />
         <MovieSchedule />
-
+        <TheaterInfo />
       </h1>
     </div>
   );

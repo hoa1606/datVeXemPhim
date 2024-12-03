@@ -7,7 +7,7 @@ import MainLayout from "../layouts/MainLayout/MainLayout";
 import LoginPage from "../modules/auth/Login/LoginPage";
 import RegisterPage from "../modules/auth/Register/RegisterPage";
 import HomePage from "../modules/home/HomePage/HomePage";
-
+import MovieDetailPage from "../modules/home/MovieDetailsPage/MovieDetailsPage"
 export default function useRouteElements() {
   const elements = useRoutes([
     // auth
@@ -39,6 +39,10 @@ export default function useRouteElements() {
           path: '/about',
           element: <div>About</div>,
         },
+        {
+          path: '/detail/:id',
+          element: <MovieDetailPage />,
+        }
       ],
     },
 
