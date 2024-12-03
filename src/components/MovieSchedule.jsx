@@ -7,7 +7,6 @@ const MovieSchedule = () => {
     const [movies, setMovies] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
 
-
     React.useEffect(() => {
         const fetchMovies = async () => {
             try {
@@ -23,7 +22,7 @@ const MovieSchedule = () => {
 
     const moviesPerPage = 4;
 
-    // chạy carousel
+    // Chuyển carousel về phía trước và phía sau
     const handlePrev = () => {
         setCurrentIndex((prev) => Math.max(prev - moviesPerPage, 0));
     };
@@ -34,14 +33,27 @@ const MovieSchedule = () => {
         );
     };
 
+    // Điều hướng đến trang chi tiết phim
+    const handleMovieClick = (maPhim) => {
+        window.location.href = `/detail/${maPhim}`; // Điều hướng bằng URL
+    };
+
     return (
         <Box className="movie-schedule" sx={{ paddingTop: '50px', backgroundColor: '#191a1c', color: 'white' }}>
             <Typography variant="h4" align="center" sx={{ marginBottom: '40px', marginTop: '40px' }}>
-
+                Lịch Chiếu Phim
             </Typography>
             <Grid container spacing={2}>
                 {movies.slice(currentIndex, currentIndex + moviesPerPage).map((movie) => (
-                    <Grid item xs={12} sm={6} md={3} key={movie.maPhim}>
+                    <Grid
+                        item
+                        xs={12}
+                        sm={6}
+                        md={3}
+                        key={movie.maPhim}
+                        onClick={() => handleMovieClick(movie.maPhim)} // Gọi hàm khi nhấn vào thẻ phim
+                        style={{ cursor: 'pointer' }} // Con trỏ hiển thị như nút
+                    >
                         <Box className="movie-card">
                             <img
                                 src={movie.hinhAnh}
@@ -54,9 +66,9 @@ const MovieSchedule = () => {
                                     borderRadius: '10px',
                                 }}
                             />
-                            <Box className="movie-info" sx={{ marginTop: '10px', fontSize: 40 }}>
+                            <Box className="movie-info" sx={{ marginTop: '10px', fontSize: 30 }}>
                                 <Typography variant="p">{movie.tenPhim}</Typography>
-                                <Typography variant="body2" fontSize={20} color="white">
+                                <Typography variant="body2" fontSize={15} color="white">
                                     {movie.moTa.slice(0, 100)}...
                                 </Typography>
                             </Box>
@@ -64,7 +76,7 @@ const MovieSchedule = () => {
                     </Grid>
                 ))}
             </Grid>
-            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px', }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
                 <Button
                     variant="outlined"
                     onClick={handlePrev}
@@ -81,7 +93,7 @@ const MovieSchedule = () => {
                     Next
                 </Button>
             </Box>
-        </Box >
+        </Box>
     );
 };
 

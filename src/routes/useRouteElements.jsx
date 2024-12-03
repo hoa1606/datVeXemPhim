@@ -11,6 +11,7 @@ import HomePage from "../modules/home/HomePage/HomePage";
 import UserManagementPage from "../modules/admin/UserManagerment/UserManagermentPage";
 import MovieManagementPage from "../modules/admin/MovieManagerment/MovieManagermentPage";
 
+import MovieDetailPage from "../modules/home/MovieDetailsPage/MovieDetailsPage"
 export default function useRouteElements() {
   const elements = useRoutes([
     // auth
@@ -42,6 +43,10 @@ export default function useRouteElements() {
           path: '/about',
           element: <div>About</div>,
         },
+        {
+          path: '/detail/:id',
+          element: <MovieDetailPage />,
+        }
       ],
     },
 

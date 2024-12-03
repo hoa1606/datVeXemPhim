@@ -1,11 +1,13 @@
 .movie-schedule {
     padding: 20px;
     background-color: #f9f9f9;
+    min-height: 120vh;
 }
 
 .movie-card {
     text-align: center;
     padding: 10px;
+    cursor: pointer;
 }
 
 .movie-image {

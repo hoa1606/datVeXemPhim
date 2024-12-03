@@ -24,4 +24,8 @@ export const getScheduleInfo = async (maHeThongRap) => {
     return response.data.content;
 };
 
+export const getMovieDetails = async (maHeThongRap) => {
+    const response = await fetcher.get(`/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maHeThongRap}`);
+    return response.data.content;
+};
 
