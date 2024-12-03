@@ -9,4 +9,12 @@ export const userApi = {
       throw error.response.data;
     }
   },
+  register: async (data) => {
+    try {
+      const response = await fetcher.post('/QuanLyNguoiDung/DangKy', data);
+      return response.data;
+    } catch (error) {
+      throw error.response.data;
+    }
+  },
 };
