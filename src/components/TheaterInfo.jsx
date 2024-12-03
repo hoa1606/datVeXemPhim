@@ -3,18 +3,18 @@ import { getTheaterInfo, getScheduleInfo } from "../aips/user";
 import "./css/TheaterInfo.css"
 
 const TheaterInfo = () => {
-    const [theaterSystems, setTheaterSystems] = useState([]); // Danh sách rạp
-    const [selectedTheater, setSelectedTheater] = useState(null); // Rạp được chọn
-    const [schedule, setSchedule] = useState([]); // Danh sách lịch chiếu phim
+    const [theaterSystems, setTheaterSystems] = useState([]);
+    const [selectedTheater, setSelectedTheater] = useState(null);
+    const [schedule, setSchedule] = useState([]);
 
-    // Lấy danh sách hệ thống rạp khi component được mount
+
     useEffect(() => {
         const fetchTheaterSystems = async () => {
             try {
                 const data = await getTheaterInfo();
                 setTheaterSystems(data || []);
                 if (data.length > 0) {
-                    setSelectedTheater(data[0].maHeThongRap); // Mặc định chọn rạp đầu tiên
+                    setSelectedTheater(data[0].maHeThongRap);
                 }
             } catch (error) {
                 console.error("Error fetching theater systems:", error);
@@ -76,19 +76,19 @@ const TheaterInfo = () => {
                                         movie.lstLichChieuTheoPhim.map((showtime) => {
                                             const showtimeDate = new Date(showtime.ngayChieuGioChieu);
 
-                                            // Kiểm tra xem ngày giờ có hợp lệ không
+
                                             if (isNaN(showtimeDate)) {
-                                                return null; // Nếu ngày giờ không hợp lệ, không hiển thị
+                                                return null;
                                             }
 
                                             return (
                                                 <button key={showtime.maLichChieu} className="showtime-button">
-                                                    {showtimeDate.toLocaleString()} {/* Hiển thị thời gian dưới dạng chuỗi */}
+                                                    {showtimeDate.toLocaleString()}
                                                 </button>
                                             );
                                         })
                                     ) : (
-                                        <p>No showtimes available</p> // Nếu không có lịch chiếu, hiển thị thông báo
+                                        <p>No showtimes available</p>
                                     )}
                                 </div>
                             </div>
