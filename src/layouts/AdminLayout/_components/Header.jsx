@@ -17,7 +17,7 @@ const Header = () => {
   const handleLogout = () => {
     dispatch(logout());
     setAnchorEl(null);
-    navigate('/auth/login')
+    navigate('/auth/login');
   };
 
   return (
